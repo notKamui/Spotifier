@@ -1,8 +1,26 @@
 <div class="connect-content">
-  <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
+  <h1><span>Connectez</span>-vous</h1>
+  <form (onSubmit)="submitUsername()" #usernameForm="ngForm">
+    <mat-form-field class="field" appearance="outline">
+      <mat-label>Nom d'utilisateur</mat-label>
+      <input
+        name="unameInput"
+        #usernameInput
+        [formControl]="username"
+        (keyup.enter)="submitUsername(); usernameInput.blur()"
+        matInput
+        placeholder="Ex. John"
+      >
+      <mat-icon matSuffix>login</mat-icon>
+      <mat-hint align="end">{{ username.value?.length || 0 }} / 20</mat-hint>
+      <mat-error *ngIf="username.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+
+    <button
+      type="submit"
+      mat-flat-button
+      [ngClass]="{ disabled: username.invalid }"
+      [disabled]="username.invalid"
+    >Connexion</button>
+  </form>
 </div>

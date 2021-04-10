@@ -1,14 +1,14 @@
 <div class="navbar-content">
   <img src="../../assets/logo.png" routerLink="/home">
   <mat-divider></mat-divider>
-  <div *ngIf="!globalState.isUserConnected()" class="navbar-subsection">
+  <div *ngIf="!globalState.isConnected()" class="navbar-subsection">
     <h2>Nouveau ici ?</h2>
     <ul>
       <li routerLink="/connect"><mat-icon>account_circle</mat-icon> <span>Connexion</span></li>
     </ul>
   </div>
-  <div *ngIf="globalState.isUserConnected()" class="navbar-subsection">
-    <h2>Bienvenue {{ username }}</h2>
+  <div *ngIf="globalState.isConnected()" class="navbar-subsection">
+    <h2>Bienvenue, <span>{{ globalState.getUsername() }}</span></h2>
     <ul>
       <li><mat-icon>add</mat-icon> <span>Créer une playlist</span></li>
       <li><mat-icon>refresh</mat-icon> <span>Actualiser mes playlists</span></li>
@@ -23,8 +23,8 @@
       <li routerLink="/album"><mat-icon>album</mat-icon> <span>Par album</span></li>
     </ul>
   </div>
-  <mat-divider *ngIf="globalState.isUserConnected()"></mat-divider>
-  <div *ngIf="globalState.isUserConnected()" class="navbar-subsection">
+  <mat-divider *ngIf="globalState.isConnected()"></mat-divider>
+  <div *ngIf="globalState.isConnected()" class="navbar-subsection">
     <h2>Mes playlists</h2>
     <ul>
     </ul>

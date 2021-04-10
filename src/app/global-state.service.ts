@@ -5,13 +5,21 @@ import { Observable, Subscriber } from 'rxjs';
   providedIn: 'root',
 })
 export class GlobalStateService {
-  private userIsConnected = false;
+  private username: string | null = null;
 
-  isUserConnected(): boolean {
-    return this.userIsConnected;
+  isConnected(): boolean {
+    return this.username != null;
   }
 
-  toggleUserIsConnected(): void {
-    this.userIsConnected = !this.userIsConnected;
+  getUsername(): string {
+    return this.username ?? '';
+  }
+
+  connect(username: string): void {
+    this.username = username;
+  }
+
+  disconnect(): void {
+    this.username = null;
   }
 }

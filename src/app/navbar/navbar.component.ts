@@ -7,8 +7,6 @@ import { GlobalStateService } from '../global-state.service';
   styleUrls: ['./navbar.component.sass'],
 })
 export class NavbarComponent implements OnInit {
-  username = 'BABA';
-
   constructor(public globalState: GlobalStateService) {}
 
   ngOnInit(): void {}

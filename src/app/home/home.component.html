@@ -5,7 +5,7 @@
   <ul align="center">
     <li routerLink="/artist"><mat-icon>person</mat-icon> <span>Trouvez un artiste</span></li>
     <li routerLink="/album"><mat-icon>album</mat-icon> <span>Trouvez un album</span></li>
-    <li *ngIf="!globalState.isUserConnected()" routerLink="/connect"><mat-icon>account_circle</mat-icon> <span>Connectez-vous</span></li>
-    <li *ngIf="globalState.isUserConnected()"><mat-icon>add</mat-icon> <span>Créez une playlist</span></li>
+    <li *ngIf="!globalState.isConnected()" routerLink="/connect"><mat-icon>account_circle</mat-icon> <span>Connectez-vous</span></li>
+    <li *ngIf="globalState.isConnected()"><mat-icon>add</mat-icon> <span>Créez une playlist</span></li>
   </ul>
 </div>
