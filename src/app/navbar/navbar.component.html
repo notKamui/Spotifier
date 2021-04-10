@@ -12,7 +12,7 @@
     <ul>
       <li><mat-icon>add</mat-icon> <span>Créer une playlist</span></li>
       <li><mat-icon>refresh</mat-icon> <span>Actualiser mes playlists</span></li>
-      <li><mat-icon>logout</mat-icon> <span>Déconnexion</span></li>
+      <li (click)="globalState.disconnect()"><mat-icon>logout</mat-icon> <span>Déconnexion</span></li>
     </ul>
   </div>
   <mat-divider></mat-divider>
