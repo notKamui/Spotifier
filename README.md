@@ -1,6 +1,8 @@
 # Spotifier
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+A simple Playlist maker
+
+Training for using Angular
 
 ## Development server
 
