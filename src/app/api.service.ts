@@ -13,7 +13,7 @@ import {
   PlaylistResponse,
   Track,
   TrackResponse,
-} from './model';
+} from './api_model';
 
 @Injectable({
   providedIn: 'root',
