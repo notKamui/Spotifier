@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalStateService } from '../global-state.service';
+import { GlobalStateService } from '../service/global-state.service';
 
 @Component({
   selector: 'app-home',
