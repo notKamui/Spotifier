@@ -17,6 +17,9 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ConnectComponent } from './connect/connect.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component';
+import { ArtistSearchComponent } from './artist-search/artist-search.component';
+import { AlbumSearchComponent } from './album-search/album-search.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavbarComponent,
     ConnectComponent,
+    SearchComponent,
+    ArtistSearchComponent,
+    AlbumSearchComponent,
   ],
   imports: [
     BrowserModule,

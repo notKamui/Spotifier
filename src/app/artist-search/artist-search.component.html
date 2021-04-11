@@ -1,0 +1,31 @@
+<div class="artist-content">
+  <h1>Trouvez un <span>artiste</span></h1>
+  <form (onSubmit)="search()" #artistSearchForm="ngForm">
+    <mat-form-field class="field" appearance="standard">
+      <mat-label>Recherche</mat-label>
+      <input
+        #artistSearchInput
+        (keyup.enter)="search(); artistSearchInput.blur()"
+        [formControl]="artistSearch"
+        matInput
+        placeholder="Daft Punk"
+        required
+      >
+      <mat-error *ngIf="artistSearch.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      [ngClass]="{ disabled: artistSearch.invalid }"
+      [disabled]="artistSearch.invalid"
+      mat-mini-fab
+      aria-label="Search"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+  <div class="list">
+    <ul>
+      <li *ngFor="let artist of artists" routerLink="/artist/{{ artist.id }}">{{ artist.name }}</li>
+    </ul>
+  </div>
+</div>

@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-artist-page',
   templateUrl: './artist-page.component.html',
-  styleUrls: ['./artist-page.component.sass']
+  styleUrls: ['./artist-page.component.sass'],
 })
 export class ArtistPageComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
