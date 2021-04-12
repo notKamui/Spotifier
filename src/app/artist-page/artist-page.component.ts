@@ -14,7 +14,7 @@ export class ArtistPageComponent implements OnInit {
   constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params.artistId;
+    const id: string = this.route.snapshot.params.artistId;
     this.apiService
       .getTracksOfArtist(id)
       .subscribe((tracks: Track[]) => (this.tracks = tracks));
