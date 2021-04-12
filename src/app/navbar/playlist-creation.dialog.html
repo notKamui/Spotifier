@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>Création de Playlist</h1>
+<div mat-dialog-content>
+  <p>Entrez le nom de la playlist</p>
+  <mat-form-field appearance="outline">
+    <mat-label>Playlist</mat-label>
+    <input #playlistNameField="ngModel" [(ngModel)]="data.playlistName" matInput required />
+    <mat-error *ngIf="playlistNameField.errors?.required">Ce champs est requis</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data.playlistName" cdkFocusInitial>Ok</button>
+</div>

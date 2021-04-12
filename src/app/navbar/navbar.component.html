@@ -10,7 +10,7 @@
   <div *ngIf="globalState.isConnected()" class="navbar-subsection">
     <h2>Bienvenue, <span>{{ globalState.getUsername() }}</span></h2>
     <ul>
-      <li><mat-icon>add</mat-icon> <span>Créer une playlist</span></li>
+      <li (click)="openDialog()"><mat-icon>add</mat-icon> <span>Créer une playlist</span></li>
       <li (click)="globalState.refreshPlaylists()"><mat-icon>refresh</mat-icon> <span>Actualiser mes playlists</span></li>
       <li (click)="globalState.disconnect()"><mat-icon>logout</mat-icon> <span>Déconnexion</span></li>
     </ul>
