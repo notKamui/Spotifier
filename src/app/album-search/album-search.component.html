@@ -1,1 +1,32 @@
-<p>album-search works!</p>
+<div class="album-content">
+  <h1>Trouvez un <span>album</span></h1>
+  <form (onSubmit)="search()" #albumSearchForm="ngForm">
+    <mat-form-field class="field" appearance="standard">
+      <mat-label>Recherche</mat-label>
+      <input
+        #albumSearchInput
+        (keyup.enter)="search(); albumSearchInput.blur()"
+        [formControl]="albumSearch"
+        matInput
+        placeholder="Thrill of the Arts"
+        required
+      >
+      <mat-error *ngIf="albumSearch.invalid">{{ getErrorMessage() }}</mat-error>
+    </mat-form-field>
+    <button
+      type="submit"
+      (click)="search()"
+      [ngClass]="{ disabled: albumSearch.invalid }"
+      [disabled]="albumSearch.invalid"
+      mat-mini-fab
+      aria-label="Search"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </form>
+  <div class="list">
+    <ul>
+      <li *ngFor="let album of albums" routerLink="/album/{{ album.album_id }}">{{ album.album }}</li>
+    </ul>
+  </div>
+</div>
