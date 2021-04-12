@@ -15,6 +15,7 @@
     </mat-form-field>
     <button
       type="submit"
+      (click)="search()"
       [ngClass]="{ disabled: artistSearch.invalid }"
       [disabled]="artistSearch.invalid"
       mat-mini-fab

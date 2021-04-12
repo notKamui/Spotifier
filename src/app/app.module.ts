@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
+import { TracklistComponent } from './tracklist/tracklist.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AlbumSearchComponent } from './album-search/album-search.component';
     SearchComponent,
     ArtistSearchComponent,
     AlbumSearchComponent,
+    TracklistComponent,
   ],
   imports: [
     BrowserModule,
