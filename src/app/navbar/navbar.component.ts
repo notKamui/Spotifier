@@ -50,11 +50,18 @@ export class NavbarComponent implements OnInit {
   selector: 'app-playlist-creation-dialog',
   templateUrl: './playlist-creation.dialog.html',
 })
-export class PlaylistCreationDialogComponent {
+export class PlaylistCreationDialogComponent implements OnInit {
   constructor(
+    private globalState: GlobalStateService,
     public dialogRef: MatDialogRef<PlaylistCreationDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: PlaylistCreationDialogData
   ) {}
+
+  ngOnInit(): void {
+    if (!this.globalState.isConnected()) {
+      this.onNoClick();
+    }
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
