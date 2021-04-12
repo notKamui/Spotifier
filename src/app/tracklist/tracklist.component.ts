@@ -11,6 +11,9 @@ export class TracklistComponent implements OnInit {
   @Input()
   tracks: Track[] = [];
 
+  @Input()
+  isAddable = false;
+
   constructor(public globalState: GlobalStateService) {}
 
   ngOnInit(): void {}

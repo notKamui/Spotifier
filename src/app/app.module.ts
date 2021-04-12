@@ -21,6 +21,7 @@ import { SearchComponent } from './search/search.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
 import { TracklistComponent } from './tracklist/tracklist.component';
+import { PlaylistPageComponent } from './playlist-page/playlist-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TracklistComponent } from './tracklist/tracklist.component';
     ArtistSearchComponent,
     AlbumSearchComponent,
     TracklistComponent,
+    PlaylistPageComponent,
   ],
   imports: [
     BrowserModule,

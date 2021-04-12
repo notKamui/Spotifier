@@ -6,6 +6,7 @@ import { ArtistPageComponent } from './artist-page/artist-page.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
 import { ConnectComponent } from './connect/connect.component';
 import { HomeComponent } from './home/home.component';
+import { PlaylistPageComponent } from './playlist-page/playlist-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'artist/:artistId', component: ArtistPageComponent },
   { path: 'album/:albumId', component: AlbumPageComponent },
   { path: 'album', component: AlbumSearchComponent },
+  { path: 'playlist/:playlistId', component: PlaylistPageComponent },
   { path: 'connect', component: ConnectComponent },
 ];
 
