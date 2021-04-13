@@ -19,6 +19,7 @@
     <button
       type="submit"
       mat-flat-button
+      (click)="submitUsername()"
       [ngClass]="{ disabled: username.invalid }"
       [disabled]="username.invalid"
     >Connexion</button>
