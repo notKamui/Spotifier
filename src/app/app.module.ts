@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArtistPageComponent } from './artist-page/artist-page.component';
@@ -24,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
 import { AlbumSearchComponent } from './album-search/album-search.component';
-import { TracklistComponent } from './tracklist/tracklist.component';
+import {
+  PlaylistAddDialogComponent,
+  TracklistComponent,
+} from './tracklist/tracklist.component';
 import { PlaylistPageComponent } from './playlist-page/playlist-page.component';
 
 @NgModule({
@@ -40,6 +44,7 @@ import { PlaylistPageComponent } from './playlist-page/playlist-page.component';
     ArtistSearchComponent,
     AlbumSearchComponent,
     TracklistComponent,
+    PlaylistAddDialogComponent,
     PlaylistPageComponent,
   ],
   imports: [
@@ -52,6 +57,7 @@ import { PlaylistPageComponent } from './playlist-page/playlist-page.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatDialogModule,
     FormsModule,
     ReactiveFormsModule,

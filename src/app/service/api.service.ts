@@ -104,13 +104,18 @@ export class ApiService {
     username: string,
     playlistId: string,
     songId: string
-  ): void {
-    this.httpClient.put<AddSongToPlaylist>(
-      'https://europe-west1-cours-angular-263913.cloudfunctions.net/apiSpotify/api/user/' +
-        username +
-        '/playlist/' +
-        playlistId,
-      { songId }
-    );
+  ): Observable<boolean> {
+    return this.httpClient
+      .put<AddSongToPlaylist>(
+        'https://europe-west1-cours-angular-263913.cloudfunctions.net/apiSpotify/api/user/' +
+          username +
+          '/playlist/' +
+          playlistId,
+        { songId }
+      )
+      .pipe(
+        map((_) => true),
+        catchError((_) => of(false))
+      );
   }
 }

@@ -3,7 +3,7 @@
     <ul>
       <li *ngFor="let track of tracks" >
         <span class="title">{{ track.name }}</span>
-        <span *ngIf="globalState.isConnected() && isAddable" class="add"><mat-icon>add</mat-icon></span>
+        <span *ngIf="globalState.isConnected() && isAddable" (click)="openDialog(track.id)" class="add"><mat-icon>add</mat-icon></span>
       </li>
     </ul>
   </div>

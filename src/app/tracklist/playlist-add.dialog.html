@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Création de Playlist</h1>
+<div mat-dialog-content>
+  <p>Entrez le nom de la playlist</p>
+  <mat-form-field appearance="outline">
+    <mat-label>Playlist</mat-label>
+    <mat-select ngDefaultControl [(ngModel)]="data.playlistId">
+      <mat-option
+        *ngFor="let playlist of globalState.getPlaylists()"
+        [value]="playlist.id"
+        required
+      >{{playlist.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data.playlistId" cdkFocusInitial>Ok</button>
+</div>

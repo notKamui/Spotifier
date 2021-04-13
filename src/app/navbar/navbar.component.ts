@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((playlistName: string) => {
-      console.log(playlistName);
       this.apiService
         .createPlaylistForUser(this.globalState.getUsername(), playlistName)
         .subscribe((status: boolean) => {
