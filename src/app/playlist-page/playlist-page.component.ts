@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 import { Track } from '../model/api_model';
 import { ApiService } from '../service/api.service';
 import { GlobalStateService } from '../service/global-state.service';
@@ -24,9 +25,15 @@ export class PlaylistPageComponent implements OnInit {
       this.router.navigate(['/']);
     }
 
-    const id: string = this.route.snapshot.params.playlistId;
-    this.apiService
-      .getTracksOfUserFromPlaylist(this.globalState.getUsername(), id)
+    this.route.paramMap
+      .pipe(
+        switchMap((params) =>
+          this.apiService.getTracksOfUserFromPlaylist(
+            this.globalState.getUsername(),
+            params.get('playlistId') ?? ''
+          )
+        )
+      )
       .subscribe((tracks: Track[]) => (this.tracks = tracks));
   }
 }
