@@ -27,7 +27,13 @@
   <div *ngIf="globalState.isConnected()" class="navbar-subsection">
     <h2>Mes playlists</h2>
     <ul>
-      <li *ngFor="let playlist of globalState.getPlaylists()" routerLink="/playlist/{{playlist.id}}">{{ playlist.name }}</li>
+      <li class="playlist" *ngFor="let playlist of globalState.getPlaylists()" routerLink="/playlist/{{playlist.id}}">
+        {{ playlist.name }}
+        <mat-icon
+          class="pl-icon"
+          (click)="deletePlaylist(playlist.id)"
+        >clear</mat-icon>
+      </li>
     </ul>
   </div>
 </div>

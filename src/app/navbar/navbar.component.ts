@@ -43,6 +43,18 @@ export class NavbarComponent implements OnInit {
         });
     });
   }
+
+  deletePlaylist(playlistId: string): void {
+    this.apiService
+      .deletePlaylistOfUser(this.globalState.getUsername(), playlistId)
+      .subscribe((status: boolean) => {
+        if (status) {
+          this.globalState.refreshPlaylists();
+        } else {
+          console.log('Error: could not DELETE playlist');
+        }
+      });
+  }
 }
 
 @Component({
