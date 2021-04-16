@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
 import { Playlist } from '../model/api_model';
 import { ApiService } from './api.service';
 
