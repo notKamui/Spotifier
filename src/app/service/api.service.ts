@@ -118,4 +118,21 @@ export class ApiService {
         catchError((_) => of(false))
       );
   }
+
+  deletePlaylistOfUser(
+    username: string,
+    playlistId: string
+  ): Observable<boolean> {
+    return this.httpClient
+      .delete<boolean>(
+        'https://europe-west1-cours-angular-263913.cloudfunctions.net/apiSpotify/api/user/' +
+          username +
+          '/playlist/' +
+          playlistId
+      )
+      .pipe(
+        map((_) => true),
+        catchError((_) => of(false))
+      );
+  }
 }
